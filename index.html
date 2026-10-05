@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knitting Note</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+
+  <body>
+    <main class="home">
+      <header class="home-header">
+        <img class="home-logo" src="assets/logo-top.png" alt="Knitting Note" />
+        <p>わたしの編み物記録</p>
+      </header>
+
+      <section class="menu">
+        <button class="menu-card" onclick="location.href = 'works.html'">
+          <span class="menu-icon">🧥</span>
+          <span>
+            <strong>作品</strong>
+            <small>編み終わった作品を見る</small>
+          </span>
+        </button>
+
+        <button class="menu-card" onclick="location.href = 'yarns.html'">
+          <span class="menu-icon">🧵</span>
+          <span>
+            <strong>毛糸</strong>
+            <small>持っていた毛糸を記録する</small>
+          </span>
+        </button>
+
+        <button
+          class="menu-card register"
+          onclick="location.href = 'register-menu.html'"
+        >
+          <span class="menu-icon">＋</span>
+          <span>
+            <strong>登録</strong>
+            <small>作品や毛糸を登録する</small>
+          </span>
+        </button>
+
+        <button class="menu-card" onclick="location.href = 'backup.html'">
+          <span class="menu-icon">💾</span>
+          <span>
+            <strong>バックアップ</strong>
+            <small>作品や毛糸のデータを保存する</small>
+          </span>
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

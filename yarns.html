@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>毛糸 - Knitting Note</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="yarns-page">
+      <header class="page-header">
+        <button class="back-button" onclick="location.href = 'index.html'">
+          ←
+        </button>
+        <img class="page-logo" src="assets/logo-yarns.png" alt="Yarns" />
+      </header>
+
+      <div class="yarn-search">
+        <input
+          type="search"
+          id="yarn-search-input"
+          placeholder="🔍 メーカー・商品名・色・色番・素材を検索"
+        />
+
+        <div class="yarn-filter-label">カラー</div>
+
+        <div class="yarn-color-filters">
+          <button type="button" class="yarn-color-filter" data-color="red">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="orange">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="yellow">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="green">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="blue">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="purple">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="pink">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="brown">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="white">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="ivory">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="gray">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="black">
+            ●
+          </button>
+          <button type="button" class="yarn-color-filter" data-color="rainbow">
+            ●
+          </button>
+        </div>
+
+        <div class="yarn-search-fields">
+          <label>太さ<select id="filter-thickness"><option value="">すべて</option><option>超極細</option><option>極細</option><option>合細</option><option>中細</option><option>合太</option><option>並太</option><option>極太</option><option>超極太</option></select></label>
+          <label>素材<select id="filter-material"><option value="">すべて</option><option>ウール</option><option>アクリル</option><option>コットン</option><option>ポリエステル</option><option>ナイロン</option><option>アルパカ</option><option>カシミヤ</option><option>シルク</option><option>リネン</option><option>レーヨン</option><option>モヘア</option><option>その他</option></select></label>
+          <label>目（10cm）<input id="filter-stitches" type="number" min="0" placeholder="目数" /></label>
+          <label>段（10cm）<input id="filter-rows" type="number" min="0" placeholder="段数" /></label>
+          <label>並び替え<select id="sort-yarns"><option value="newest">登録日：新しい順</option><option value="oldest">登録日：古い順</option><option value="name">商品名順</option></select></label>
+          <p class="form-help">ゲージは入力値の±3以内を表示します（棒針・かぎ針）。</p>
+        </div>
+      </div>
+
+      <section class="yarns-grid" id="yarns-grid"></section>
+    </main>
+
+    <script src="yarns.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>毛糸編集 - Knitting Note</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="register-page">
+      <header class="page-header">
+        <button class="back-button" onclick="history.back()">←</button>
+        <h1>毛糸編集</h1>
+      </header>
+
+      <form class="register-form">
+        <div class="form-group">
+          <label>毛糸画像</label>
+
+          <div id="image-preview" class="image-preview"></div>
+
+          <div class="image-buttons">
+            <button type="button" id="camera-button" class="image-button">
+              📷 カメラで変更
+            </button>
+
+            <button type="button" id="gallery-button" class="image-button">
+              🖼️ 写真から変更
+            </button>
+          </div>
+
+          <input
+            type="file"
+            id="camera-input"
+            accept="image/*"
+            capture="environment"
+            hidden
+          />
+
+          <input type="file" id="gallery-input" accept="image/*" hidden />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-maker">メーカー</label>
+          <input type="text" id="yarn-maker" placeholder="例：ハマナカ" />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-name">商品名</label>
+          <input type="text" id="yarn-name" placeholder="例：アメリー" />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-color-number">色番</label>
+          <input type="text" id="yarn-color-number" placeholder="例：01" />
+        </div>
+
+        <div class="form-group">
+          <label>カラー</label>
+
+          <div class="yarn-color-options">
+            <button type="button" class="yarn-color-option" data-color="red">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="orange">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="yellow">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="green">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="blue">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="purple">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="pink">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="brown">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="white">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="ivory">
+              ●
+            </button>
+
+            <button type="button" class="yarn-color-option" data-color="gray">
+              ●
+            </button>
+            <button type="button" class="yarn-color-option" data-color="black">
+              ●
+            </button>
+            <button
+              type="button"
+              class="yarn-color-option"
+              data-color="rainbow"
+            >
+              ●
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-material">素材</label>
+          <input type="text" id="yarn-material" placeholder="例：ウール 100%" />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-thickness">太さ</label>
+          <select id="yarn-thickness">
+            <option value="">選択してください</option>
+            <option>超極細</option><option>極細</option><option>合細</option><option>中細</option>
+            <option>合太</option><option>並太</option><option>極太</option><option>超極太</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-weight">重量</label>
+          <input type="text" id="yarn-weight" placeholder="例：40" inputmode="decimal" />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-length">長さ</label>
+          <input type="text" id="yarn-length" placeholder="例：110" inputmode="decimal" />
+        </div>
+
+        <!-- 棒針ゲージ -->
+        <div class="form-group">
+          <label for="yarn-knitting-gauge">棒針ゲージ</label>
+          <input
+            type="text"
+            id="yarn-knitting-gauge"
+            placeholder="例：10cm 20目・28段"
+          />
+        </div>
+
+        <!-- かぎ針ゲージ -->
+        <div class="form-group">
+          <label for="yarn-crochet-gauge">かぎ針ゲージ</label>
+          <input
+            type="text"
+            id="yarn-crochet-gauge"
+            placeholder="例：10cm 18目・22段"
+          />
+        </div>
+
+        <!-- 推奨棒針 -->
+        <div class="form-group">
+          <label for="yarn-recommended-knitting-needle">推奨棒針</label>
+          <input
+            type="text"
+            id="yarn-recommended-knitting-needle"
+            placeholder="例：棒針 6〜8号"
+          />
+        </div>
+
+        <!-- 推奨かぎ針 -->
+        <div class="form-group">
+          <label for="yarn-recommended-crochet-hook">推奨かぎ針</label>
+          <input
+            type="text"
+            id="yarn-recommended-crochet-hook"
+            placeholder="例：かぎ針 6/0〜8/0号"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-purchase-location">購入場所</label>
+          <input type="text" id="yarn-purchase-location" placeholder="例：ユザワヤ、オンラインショップ" />
+        </div>
+
+        <div class="form-group">
+          <label for="yarn-comment">コメント</label>
+          <textarea
+            id="yarn-comment"
+            rows="5"
+            placeholder="毛糸についてのメモなど"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">変更を保存</button>
+      </form>
+    </main>
+
+    <script src="yarn-edit.js"></script>
+  </body>
+</html>

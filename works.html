@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品 - Knitting Note</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="works-page">
+      <header class="page-header">
+        <button class="back-button" onclick="location.href = 'index.html'">←</button>
+        <img class="page-logo" src="assets/logo-works.png" alt="Works" />
+      </header>
+
+      <div class="yarn-search works-search">
+        <input
+          type="search"
+          id="work-search-input"
+          placeholder="🔍 作品名・使用糸・素材・メモを検索"
+        />
+
+        <div class="works-sort">
+          <label for="sort-works">並び替え</label>
+          <select id="sort-works">
+            <option value="newest">登録日：新しい順</option>
+            <option value="oldest">登録日：古い順</option>
+            <option value="name">作品名順</option>
+          </select>
+        </div>
+      </div>
+
+      <section class="works-grid" id="works-grid"></section>
+    </main>
+
+    <script src="image-store.js"></script>
+    <script src="works.js"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品登録 - Knitting Note</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="register-page">
+      <header class="page-header register-header">
+        <button class="back-button" onclick="history.back()">←</button>
+        <h1>作品登録</h1>
+      </header>
+
+      <form class="register-form">
+        <!-- 画像 -->
+        <div class="form-group">
+          <label>作品画像</label>
+
+          <div class="image-buttons">
+            <button type="button" id="camera-button" class="image-button">
+              📷 カメラで撮影
+            </button>
+
+            <button type="button" id="gallery-button" class="image-button">
+              🖼️ 写真から選ぶ
+            </button>
+          </div>
+
+          <!-- カメラ用 -->
+          <input
+            type="file"
+            id="camera-input"
+            accept="image/*"
+            capture="environment"
+            hidden
+          />
+
+          <!-- 写真選択用 -->
+          <input
+            type="file"
+            id="gallery-input"
+            accept="image/*"
+            multiple
+            hidden
+          />
+
+          <p class="form-help">
+            複数枚登録できます。あとから追加することもできます。
+          </p>
+
+          <div id="image-preview" class="image-preview"></div>
+        </div>
+
+        <!-- 作品名 -->
+        <div class="form-group">
+          <label for="work-name">作品名</label>
+
+          <input
+            type="text"
+            id="work-name"
+            placeholder="例：白いハイネックセーター"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="work-completed-at">完成日</label>
+          <input type="date" id="work-completed-at" />
+          <p class="form-help">完成した日（任意）</p>
+        </div>
+
+                <!-- 参考URL・本 -->
+        <div class="form-group">
+          <label for="work-reference">参考にしたURLや本</label>
+
+          <textarea
+            id="work-reference"
+            rows="3"
+            placeholder="URLや本のタイトルなど"
+          ></textarea>
+        </div>
+
+        <!-- 使用糸 -->
+        <div class="form-group">
+          <label>使用糸</label>
+          <div id="work-yarn-list" class="work-yarn-list"></div>
+          <button type="button" class="image-button add-yarn-button" id="add-work-yarn">＋ 毛糸を追加</button>
+          <p class="form-help">登録した毛糸から複数選択できます</p>
+        </div>
+
+        <div class="form-group">
+          <label for="work-needle">使用針</label>
+          <input
+            type="text"
+            id="work-needle"
+            placeholder="例：棒針 8号、輪針 5号 40cm"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="work-gauge">ゲージ</label>
+          <textarea
+            id="work-gauge"
+            rows="3"
+            placeholder="例：10cm × 10cm = 20目・28段"
+          ></textarea>
+        </div>
+
+                <div class="form-group">
+          <label for="work-material">使用素材</label>
+          <textarea
+            id="work-material"
+            rows="3"
+            placeholder="例：ボタン 5個、ゴム 20cm"
+          ></textarea>
+        </div>
+
+        <!-- コメント -->
+        <label for="work-comment">変更点</label>
+        <textarea
+          id="work-comment"
+          rows="5"
+          placeholder="編み図から変更したところなど"
+        ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="work-memo">メモ</label>
+          <textarea
+            id="work-memo"
+            rows="5"
+            placeholder="サイズや編み方のメモ、次に編むときの覚え書きなど"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">作品を登録</button>
+      </form>
+    </main>
+
+    <script src="image-store.js"></script>
+    <script src="register.js"></script>
+  </body>
+</html>
